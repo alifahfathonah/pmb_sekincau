@@ -125,4 +125,15 @@ class profil extends CI_Controller {
 		}
 
 	}
+
+	public function pendaftaran(){
+		$get = $this->db->get('periode');
+		$data = array(
+			'page' => 'pendaftaran_sekolah',
+			'link' => 'pendaftaran',
+			// 'script' => 'script/script_profil'
+			'data' => $get 
+		);
+		$this->load->view('template/wrapper', $data);
+	}
 }
