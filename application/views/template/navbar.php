@@ -1,3 +1,16 @@
+
+<body class="bg ltr blue clearfix">
+
+<div id="wrapper" style="margin-bottom: 152px;">
+<div id="topbgr" class="clearfix">
+<div class="mx-base clearfix">
+<div id="mx-top-header" class="clearfix">
+<div class="clearfix"></div>
+<span class="mx_date">
+	Saturday, 08 September 2018</span></div>
+</div>	
+</div>
+
 <header id="header" style="height: 70px;">
 <div id="trueHeader">
 <div class="mx-base">	
