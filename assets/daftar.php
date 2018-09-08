@@ -10,16 +10,16 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="./bootstrap.min(1).css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/bootstrap.min(1).css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="./AdminLTE.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/AdminLTE.min.css">
 
 </head>
 
 <body class="hold-transition login-page" style="background-color: #a50d0d;">
     <div class="login-box">
         <div class="login-box-body">
-            <a href="http://daftar.spmb.teknokrat.ac.id/Home"><img src="./spmb.png" alt="Chania" style="width: 100%;"></a>
+            <a href="http://daftar.spmb.teknokrat.ac.id/Home"><img src="<?=base_url()?>assets/spmb.png" alt="Chania" style="width: 100%;"></a>
         </div>
 
         <!-- /.login-logo -->
@@ -66,9 +66,9 @@
     </div>
     <!-- /.login-box -->
     <!-- jQuery 2.2.3 -->
-    <script src="./jQuery-2.1.3.min.js"></script>
+    <script src="<?=base_url()?>assets/jQuery-2.1.3.min.js"></script>
     <!-- Bootstrap 3.3.6 -->
-    <script src="./bootstrap.min(2).js"></script>
+    <script src="<?=base_url()?>assets/bootstrap.min(2).js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             setTimeout(function() {
