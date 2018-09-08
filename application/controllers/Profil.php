@@ -31,26 +31,66 @@ class profil extends CI_Controller {
 	}
 
 	public function update_siswa(){
-		if(!empty($_FILES['pas_photo']['name']){
+		$this->load->library('image_lib');
+		$this->load->library('upload');
 
+		$pasfoto = NULL;
+		$ijazah = NULL;
+		$skhu = NULL;
+		$skl = NULL;
+
+		if(!empty($_FILES['pas_photo']['name'])){
+			$config['upload_path']          = './upload/';
+            $config['allowed_types']        = 'gif|jpg|png|pdf|PDF';
+            $config['max_size']             = '2048';
+            $config['file_name'] = 'pas_photo_'.date('YmdHis');
+            $this->upload->initialize($config);
+            if($this->upload->do_upload('pas_photo')){
+            	$upload_data = $this->upload->data();
+            	$pasfoto = $upload_data['file_name'];
+            }
 		}
 
-		if(!empty($_FILES['ijazah']['name']){
-
+		if(!empty($_FILES['ijazah']['name'])){
+			$config['upload_path']          = './upload/';
+            $config['allowed_types']        = 'gif|jpg|png|pdf|PDF';
+            $config['max_size']             = '2048';
+            $config['file_name'] = 'ijazah'.date('YmdHis');
+            $this->upload->initialize($config);
+            if($this->upload->do_upload('ijazah')){
+            	$upload_data = $this->upload->data();
+            	$ijazah = $upload_data['file_name'];
+            }
 		}
 
-		if(!empty($_FILES['skhu']['name']){
-
+		if(!empty($_FILES['skhu']['name'])){
+			$config['upload_path']          = './upload/';
+            $config['allowed_types']        = 'gif|jpg|png|pdf|PDF';
+            $config['max_size']             = '2048';
+            $config['file_name'] = 'skhu'.date('YmdHis');
+            $this->upload->initialize($config);
+            if($this->upload->do_upload('skhu')){
+            	$upload_data = $this->upload->data();
+            	$skhu = $upload_data['file_name'];
+            }
 		}
 
-		if(!empty($_FILES['skl']['name']){
-			
+		if(!empty($_FILES['skl']['name'])){
+			$config['upload_path']          = './upload/';
+            $config['allowed_types']        = 'gif|jpg|png|pdf|PDF';
+            $config['max_size']             = '2048';
+            $config['file_name'] = 'skl'.date('YmdHis');
+            $this->upload->initialize($config);
+            if($this->upload->do_upload('skl')){
+            	$upload_data = $this->upload->data();
+            	$skl = $upload_data['file_name'];
+            }
 		}
-		
+
 		$data = array(
-			'nisn' => $this->input->post('nisn', true),
+			'nis' => $this->input->post('nisn', true),
 			'namasiswa' => $this->input->post('nama', true),
-			'tempatlahir' => $this->input->post('tempat_lahir', true,)
+			'tempatlahir' => $this->input->post('tempat_lahir', true),
 			'tgllahir' => $this->input->post('tanggal_lahir', true),
 			'jk' => $this->input->post('jk', true),
 			'agama' => $this->input->post('agama', true),
@@ -68,10 +108,10 @@ class profil extends CI_Controller {
 			'pendidikanibu' => $this->input->post('pendidikan_ibu', true),
 			'pekerjaanibu' => $this->input->post('pekerjaan_ibu', true),
 			'penghasilanibu' => $this->input->post('penghasilan_ibu', true),
-			'pasfoto' => $this->input->post('', true),
-			'ijasah' => $this->input->post('', true),
-			'skhu' => $this->input->post('', true),
-			'skl' => $this->input->post('', true),
+			'pasfoto' => $pasfoto,
+			'ijasah' => $ijazah,
+			'skhu' => $skhu,
+			'skl' => $skl,
 		);
 
 		$this->db->where('email', $this->session->userdata('username'));

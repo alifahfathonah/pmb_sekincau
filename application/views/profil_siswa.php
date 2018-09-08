@@ -1,15 +1,15 @@
-<form method="POST" action="<?=base_url()?>profil/update_siswa">
+<form method="POST" action="<?=base_url()?>profil/update_siswa" enctype="multipart/form-data">
 	<table class="table table-striped">
 		<tr>
 			<td>NISN</td>
 			<td>
-				<input type="number" class="form-control" name="nisn" value="<?=@$data->row()->nisn?>" />
+				<input type="number" class="form-control" name="nisn" value="<?=@$data->row()->nis?>" />
 			</td>
 		</tr>
 		<tr>
 			<td>Nama</td>
 			<td>
-				<input type="text" class="form-control" name="nama" value="<?=@$data->row()->nama?>"/>
+				<input type="text" class="form-control" name="nama" value="<?=@$data->row()->namasiswa?>"/>
 			</td>
 		</tr>
 		<tr>
@@ -29,7 +29,7 @@
 			<td>
 				<select class="form-control" name="jk" >
 					<option value="">--pilih--</option>
-					<option value="Laki-Laki" <?=@$data->row()->jk == 'Laki-Laki' ? 'selected' : ''?>>Laki-Laki</option>
+					<option value="Laki-Laki" <?=@$data->row()->jk == 'Laki-laki' ? 'selected' : ''?>>Laki-Laki</option>
 					<option value="Perempuan" <?=@$data->row()->jk == 'Perempuan' ? 'selected' : ''?>>Perempuan</option>
 				</select>
 			</td>
@@ -51,7 +51,7 @@
 		<tr>
 			<td>Email</td>
 			<td>
-				<input type="email" class="form-control" name="email" value="<?=@$data->row()->email?>"/>
+				<input type="email" class="form-control" name="email" value="<?=@$data->row()->email?>" readonly/>
 			</td>
 		</tr>
 		<tr>
@@ -87,7 +87,7 @@
 		<tr>
 			<td>Nama Ayah</td>
 			<td>
-				<input type="text" class="form-control" name="nama_ayah" value="<?=@$data->row()->nilaiayah?>"/>
+				<input type="text" class="form-control" name="nama_ayah" value="<?=@$data->row()->namaayah?>"/>
 			</td>
 		</tr>
 		<tr>
@@ -159,7 +159,7 @@
 		<tr>
 			<td></td>
 			<td>
-				<button class="btn btn-primary">Simpan</button>
+				<button type="submit" class="btn btn-primary">Simpan</button>
 			</td>
 		</tr>
 	</table>
