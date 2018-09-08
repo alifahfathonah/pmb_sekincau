@@ -8,8 +8,8 @@
                                 <div id="system-message-container">
                                 </div>
 
-                                <div class="mx-component-area-inner clearfix">
-                                    <div class="contentpane">
+                                <div class="mx-component-area-inner clearfix" <?php if(!isset($link) || $link == 'dashboard' || $link == 'dashboard_login'){ echo 'style="background-color: #a50d0d;"'; }?> >
+                                    <div class="contentpane" >
                                         <?php
 											$this->load->view($page);
 										?>

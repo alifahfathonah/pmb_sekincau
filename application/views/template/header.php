@@ -7,7 +7,7 @@
 	<meta name="description" content="Fakultas Teknik dan Ilmu Komputer">
 	<meta name="generator" content="Joomla! - Open Source Content Management">
 	<title>Sistem Penerimaan Mahasiswa Baru - Buat Akun Pendaftaran</title>
-	<link href="<?=base_url()?>assets/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<!-- <link href="<?=base_url()?>assets/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
 	<link href="<?=base_url()?>assets/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
 	<link href="<?=base_url()?>assets/bootstrap-extended.css" rel="stylesheet" type="text/css">
 	<link href="<?=base_url()?>assets/system.css" rel="stylesheet" type="text/css">
@@ -19,6 +19,10 @@
 	<link href="<?=base_url()?>assets/modules.css" rel="stylesheet" type="text/css">
 	<link href="<?=base_url()?>assets/blue.css" rel="stylesheet" type="text/css">
 	<link href="<?=base_url()?>assets/menu.css" rel="stylesheet" type="text/css">
+	<!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="<?=base_url()?>assets/bootstrap.min(1).css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?=base_url()?>assets/AdminLTE.min.css">
 	<style type="text/css">
 .mx-base {max-width: 1100px;}
 body{font-size:13px;} h1{font-size:30px;} h2{font-size:20px;} h3{font-size:18px;} #mx-leftcol {width: 25%} #mx-rightcol { width: 27%} #mx-maincol {width:75%}

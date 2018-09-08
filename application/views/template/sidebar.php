@@ -12,12 +12,18 @@
                                     <div class="mod-wrapper clearfix">
                                         <div class="mod-content clearfix">
                                             <ul class="nav menu">
+                                                <?php if(!$this->session->userdata('is_login')){?>
                                                 <li class="item-213 current <?php if(!isset($link) || $link == 'dashboard'){ echo 'active'; }?>">
                                                     <a href="<?=base_url()?>"><img src="<?=base_url()?>assets/register.png" alt="Buat Akun Pendaftaran"><span class="image-title">Pendaftaran</span></a>
                                                 </li>
-                                                <li class="item-214">
-                                                    <a href="<?=base_url()?>daftar-login"><img src="<?=base_url()?>assets/login.png" alt="Daftar/Login"><span class="image-title">Login</span></a>
+                                                <li class="item-214 <?php if($link == 'dashboard_login'){ echo 'active'; }?>">
+                                                    <a href="<?=base_url()?>dashboard/dasboard_login"><img src="<?=base_url()?>assets/login.png" alt="Daftar/Login"><span class="image-title">Login</span></a>
                                                 </li>
+                                                <?php }else{?>
+                                                <li class="item-213 current <?php if(!isset($link) || $link == 'profil_siswa'){ echo 'active'; }?>">
+                                                    <a href="<?=base_url()?>profil"><img src="<?=base_url()?>assets/login.png" alt="Buat Akun Pendaftaran"><span class="image-title">Profil</span></a>
+                                                </li>
+                                                <?php }?>
                                                 <!-- <li class="item-216">
                                                     <a href="<?=base_url()?>informasi-biaya-kuliah"><img src="<?=base_url()?>assets/biayaicon.png" alt="Informasi Biaya Kuliah"><span class="image-title">Informasi Biaya Kuliah</span></a>
                                                 </li>

@@ -1,32 +1,14 @@
-<!DOCTYPE html>
-<!-- saved from url=(0041)<?=base_url()?>daftar -->
-<html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Log in</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="./bootstrap.min(1).css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="./AdminLTE.min.css">
-
-</head>
-
-<body class="hold-transition login-page" style="background-color: #a50d0d;">
+<div class="hold-transition login-page" style="background-color: #a50d0d;">
     <div class="login-box">
         <div class="login-box-body">
-            <a href="<?=base_url()?>Home"><img src="./spmb.png" alt="Chania" style="width: 100%;"></a>
+            <a href="<?=base_url()?>Home"><img src="<?=base_url()?>assets/spmb.png" alt="Chania" style="width: 100%;"></a>
         </div>
 
         <!-- /.login-logo -->
         <div class="login-box-body">
-            <h4>Buat Akun</h4>
+            <h4>Login</h4>
             <div class="tab-content">
-                <form action="dashboard/daftar" method="post">
+                <form action="<?=base_url()?>dashboard/login" method="post">
                   <!-- <form id="form_daftar"> -->
                     <div class="form-group has-feedback">
                         <input type="email" name="email" class="form-control" placeholder="Email">
@@ -36,18 +18,13 @@
                         <input type="password" name="password" class="form-control" placeholder="Password">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
-                    <div class="form-group has-feedback">
-                        <input type="password" name="password1" class="form-control" placeholder="Ulangi Password">
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
-                    
                     <div class="row">
                         <div class="col-xs-8">
 
                         </div>
                         <!-- /.col -->
                         <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign Up</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -67,9 +44,9 @@
     </div>
     <!-- /.login-box -->
     <!-- jQuery 2.2.3 -->
-    <script src="./jQuery-2.1.3.min.js"></script>
+    <script src="<?=base_url()?>assets/jQuery-2.1.3.min.js"></script>
     <!-- Bootstrap 3.3.6 -->
-    <script src="./bootstrap.min(2).js"></script>
+    <script src="<?=base_url()?>assets/bootstrap.min(2).js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             setTimeout(function() {
@@ -117,6 +94,4 @@
             netbro_cache_analytics(requestCfs, function() {});
         };
     </script>
-</body>
-
-</html>
+</div>
