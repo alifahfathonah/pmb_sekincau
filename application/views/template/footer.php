@@ -61,6 +61,9 @@
             netbro_cache_analytics(requestCfs, function() {});
         };
     </script>
+    <?php if(isset($script)){
+        $this->load->view($script);
+    }?>
 </body>
 
 </html>

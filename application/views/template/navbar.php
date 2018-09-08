@@ -17,16 +17,16 @@
                     <div id="mx-mmenu" style="display: none;">
                         <select class="select-menu" onchange="window.location.href=this.value">
                             <option value="<?=base_url()?>">&nbsp;Home</option>
-                            <option value="<?=base_url()?>informasi-pendaftaran">&nbsp;Informasi Pendaftaran</option>
-                            <option value="<?=base_url()?>informasi-program-studi">&nbsp;Informasi Program Studi</option>
+                            <!-- <option value="<?=base_url()?>informasi-pendaftaran">&nbsp;Informasi Pendaftaran</option>
+                            <option value="<?=base_url()?>informasi-program-studi">&nbsp;Informasi Program Studi</option> -->
                         </select>
                     </div>
 
                     <div id="hormenu" class="clearfix">
                         <ul class="mx-menu level-0">
                             <li class="menu-item first"><a href="<?=base_url()?>" class="menu-item first"><span class="menu"><span class="menu-title">Home</span></span></a></li>
-                            <li class="menu-item"><a href="<?=base_url()?>informasi-pendaftaran" class="menu-item"><span class="menu"><span class="menu-title">Informasi Pendaftaran</span></span></a></li>
-                            <li class="menu-item last"><a href="<?=base_url()?>informasi-program-studi" class="menu-item last"><span class="menu"><span class="menu-title">Informasi Program Studi</span></span></a></li>
+                            <!-- <li class="menu-item"><a href="<?=base_url()?>informasi-pendaftaran" class="menu-item"><span class="menu"><span class="menu-title">Informasi Pendaftaran</span></span></a></li>
+                            <li class="menu-item last"><a href="<?=base_url()?>informasi-program-studi" class="menu-item last"><span class="menu"><span class="menu-title">Informasi Program Studi</span></span></a></li> -->
                         </ul>
                     </div>
                     <script type="text/javascript">
