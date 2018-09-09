@@ -115,8 +115,57 @@ class Admin extends CI_Controller {
 			'page' => 'admin_detail_pendaftar',
 			'link' => 'periode',
 			'script' => 'script/script_dashboard',
+			'data' => $get,
+			'idpendaftar' => $idpendaftar
+		);
+		$this->load->view('template/wrapper', $data);
+	}
+
+	public function bukti_bayar_pendaftar($idpendaftar){
+		$get = $this->db->get_where('pembayaran', array('nodaftar' => $idpendaftar));
+		$data = array(
+			'page' => 'bukti_bayar_pendaftar',
+			'link' => 'periode',
+			'script' => 'script/script_dashboard',
+			'idpendaftar' => $idpendaftar,
 			'data' => $get
 		);
 		$this->load->view('template/wrapper', $data);
+	}
+
+	public function proses_verifikasi_pendaftar(){
+		$data = array(
+			'statusdaftar' => $this->input->post('verifikasi_pendaftar', true),
+			'pemverifikasi' => $this->session->userdata('username'),
+			'tglverifikasi' => date('Y-m-d H:i:s') 
+		);
+		$idpendaftar = $this->input->post('idpendaftar', true);
+		$this->db->where(array('nodaftar' => $idpendaftar));
+		$simpan = $this->db->update('pendaftaran', $data);
+		if($simpan){
+			echo '<script>alert("Berhasil disimpan");window.location = "'.base_url().'admin/detail_pendaftar/'.$idpendaftar.'";</script>';
+			exit();
+		}else{
+			echo '<script>alert("Gagal disimpan");window.location = "'.base_url().'admin/detail_pendaftar/'.$idpendaftar.'";</script>';
+			exit();
+		}
+	}
+
+	public function proses_verifikasi_bukti_bayar(){
+		$data = array(
+			'status' => $this->input->post('verifikasi_bukti_bayar', true),
+			'pemverifikasi' => $this->session->userdata('username'),
+			'tglverifikasi' => date('Y-m-d H:i:s') 
+		);
+		$idpendaftar = $this->input->post('idpendaftar', true);
+		$this->db->where(array('nodaftar' => $idpendaftar));
+		$simpan = $this->db->update('pembayaran', $data);
+		if($simpan){
+			echo '<script>alert("Berhasil disimpan");window.location = "'.base_url().'admin/bukti_bayar_pendaftar/'.$idpendaftar.'";</script>';
+			exit();
+		}else{
+			echo '<script>alert("Gagal disimpan");window.location = "'.base_url().'admin/bukti_bayar_pendaftar/'.$idpendaftar.'";</script>';
+			exit();
+		}
 	}
 }

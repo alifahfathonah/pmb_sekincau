@@ -1,7 +1,35 @@
 <h4>Detail Pendaftar</h4><hr/>
 <!-- <form method="POST" action="<?=base_url()?>profil/update_siswa" enctype="multipart/form-data"> -->
+<form method="POST" action="<?=base_url()?>admin/proses_verifikasi_pendaftar">
+	<table class="table table-striped">
+		<tr>
+			<td>
+				Verifikasi
+			</td>
+			<td>
+				<input type="hidden" name="idpendaftar" id="idpendaftar" value="<?=$idpendaftar?>">
+				<select class="form-control" name="verifikasi_pendaftar">
+					<option value="">--pilih--</option>
+					<option value="1" <?=@$data->row()->statusdaftar == '1' ? 'selected' : ''?>>Ter-Verifikasi</option>
+					<option value="2" <?=@$data->row()->statusdaftar == '2' ? 'selected' : ''?>>Diterima</option>
+					<option value="3" <?=@$data->row()->statusdaftar == '3' ? 'selected' : ''?>>Ditolak</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				
+			</td>
+			<td>
+				<button type="submit" class="btn btn-primary">Simpan</button>
+			</td>
+		</tr>
+	</table>
+</form>
+<hr>
 <form>
 	<table class="table table-striped">
+
 		<tr>
 			<td>NISN</td>
 			<td>
@@ -141,7 +169,7 @@
 				if(@$data->row()->pasfoto === NULL){
 					echo 'peserta belum upload pas foto';
 				}else{
-					echo '<a href="'.base_url().'apload/'.@$data->row()->pasfoto.'">Lihat</a>';
+					echo '<a href="'.base_url().'upload/'.@$data->row()->pasfoto.'">Lihat</a>';
 				}
 				?>
 			</td>
@@ -153,7 +181,7 @@
 				if(@$data->row()->ijasah === NULL){
 					echo 'peserta belum upload pas ijasah';
 				}else{
-					echo '<a href="'.base_url().'apload/'.@$data->row()->ijasah.'">Lihat</a>';
+					echo '<a href="'.base_url().'upload/'.@$data->row()->ijasah.'">Lihat</a>';
 				}
 				?>
 			</td>
@@ -165,7 +193,7 @@
 				if(@$data->row()->skhu === NULL){
 					echo 'peserta belum upload SKHU';
 				}else{
-					echo '<a href="'.base_url().'apload/'.@$data->row()->skhu.'">Lihat</a>';
+					echo '<a href="'.base_url().'upload/'.@$data->row()->skhu.'">Lihat</a>';
 				}
 				?>
 			</td>
@@ -177,7 +205,7 @@
 				if(@$data->row()->skl === NULL){
 					echo 'peserta belum upload SKL';
 				}else{
-					echo '<a href="'.base_url().'apload/'.@$data->row()->skl.'">Lihat</a>';
+					echo '<a href="'.base_url().'upload/'.@$data->row()->skl.'">Lihat</a>';
 				}
 				?>
 			</td>
@@ -185,7 +213,7 @@
 		<tr>
 			<td></td>
 			<td>
-				<button type="submit" class="btn btn-primary">Simpan</button>
+				<!-- <button type="submit" class="btn btn-primary">Simpan</button> -->
 			</td>
 		</tr>
 	</table>

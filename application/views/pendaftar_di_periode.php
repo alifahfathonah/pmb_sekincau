@@ -33,7 +33,12 @@
 			<td>
 				<?php 
 				$get = $this->db->get_where('pembayaran', array('nodaftar' => $value->nodaftar));
-				echo $get->row()->status
+				if($get->num_rows() == 0){
+					echo 'belum upload bukti bayar';
+				}else{
+					echo $get->row()->status;
+				}
+				
 				?>
 			</td>
 			<td>
