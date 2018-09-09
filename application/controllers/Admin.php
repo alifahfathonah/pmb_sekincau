@@ -99,10 +99,12 @@ class Admin extends CI_Controller {
 	}
 
 	public function pendaftar_di_periode($idperiode){
+		$get = $this->db->query("select * from pendaftaran left join siswa on siswa.email = pendaftaran.email where idperiode = '$idperiode'");
 		$data = array(
 			'page' => 'pendaftar_di_periode',
 			'link' => 'periode',
 			'script' => 'script/script_dashboard',
+			'data' => $get
 		);
 		$this->load->view('template/wrapper', $data);
 	}

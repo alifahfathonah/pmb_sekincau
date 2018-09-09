@@ -147,8 +147,8 @@ class profil extends CI_Controller {
 			'idperiode' => $idperiode,
 			'tgldaftar' => date('Y-m-d'),
 			'email' => $this->session->userdata('username'),
-			'statusdaftar' => 0,
-			'statusbayar' => 0
+			'statusdaftar' => '0',
+			'statusbayar' => '0'
 		);
 		$simpan = $this->db->insert('pendaftaran', $data);
 		if($simpan){
