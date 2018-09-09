@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Fakultas Teknik dan Ilmu Komputer">
 	<meta name="generator" content="Joomla! - Open Source Content Management">
-	<title>Sistem Penerimaan Mahasiswa Baru - Buat Akun Pendaftaran</title>
+	<title>Sistem Penerimaan Siswa Baru - Buat Akun Pendaftaran</title>
 	<!-- <link href="<?=base_url()?>assets/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
 	<link href="<?=base_url()?>assets/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
 	<link href="<?=base_url()?>assets/bootstrap-extended.css" rel="stylesheet" type="text/css">

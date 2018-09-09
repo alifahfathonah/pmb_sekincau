@@ -13,10 +13,13 @@
         <header id="header" style="height: 70px;">
             <div id="trueHeader">
                 <div class="mx-base">
-                    <a id="logo-text" style="width:400px;height:60px" href="<?=base_url()?>" title="Sistem Penerimaan Mahasiswa Baru"><img src="<?=base_url()?>assets/logo.png" style="border:0;" alt=""></a>
+                    <a id="logo-text" style="width:400px;height:60px" href="<?=base_url()?>" title="Sistem Penerimaan Mahasiswa Baru"><img src="<?=base_url()?>assets/logo_sekincau.png" style="border:0;" alt="" width="450px"></a>
                     <div id="mx-mmenu" style="display: none;">
                         <select class="select-menu" onchange="window.location.href=this.value">
                             <option value="<?=base_url()?>">&nbsp;Home</option>
+                            <?php if($this->session->userdata('is_login')){ ?>
+                            <option value="<?=base_url()?>dashboard/logout">&nbsp;Keluar</option>
+                            <?php }?>
                             <!-- <option value="<?=base_url()?>informasi-pendaftaran">&nbsp;Informasi Pendaftaran</option>
                             <option value="<?=base_url()?>informasi-program-studi">&nbsp;Informasi Program Studi</option> -->
                         </select>
@@ -25,6 +28,9 @@
                     <div id="hormenu" class="clearfix">
                         <ul class="mx-menu level-0">
                             <li class="menu-item first"><a href="<?=base_url()?>" class="menu-item first"><span class="menu"><span class="menu-title">Home</span></span></a></li>
+                            <?php if($this->session->userdata('is_login')){ ?>
+                            <li class="menu-item first"><a href="<?=base_url()?>dashboard/logout" class="menu-item first"><span class="menu"><span class="menu-title">Keluar</span></span></a></li>
+                            <?php }?>
                             <!-- <li class="menu-item"><a href="<?=base_url()?>informasi-pendaftaran" class="menu-item"><span class="menu"><span class="menu-title">Informasi Pendaftaran</span></span></a></li>
                             <li class="menu-item last"><a href="<?=base_url()?>informasi-program-studi" class="menu-item last"><span class="menu"><span class="menu-title">Informasi Program Studi</span></span></a></li> -->
                         </ul>

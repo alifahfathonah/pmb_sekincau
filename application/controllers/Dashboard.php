@@ -95,4 +95,10 @@ class Dashboard extends CI_Controller {
 			exit();
 		}
 	}
+
+	public function logout(){
+		session_destroy();
+		echo '<script>alert("Berhasil keluar");window.location = "'.base_url().'";</script>';
+			exit();
+	}
 }

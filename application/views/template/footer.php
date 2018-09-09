@@ -8,10 +8,10 @@
 
                             <div class="custom">
                                 <p style="text-align: center;"><strong><span style="font-size: 12pt;">Sekretariat Pendaftaran</span></strong>
-                                    <br>Universitas Teknokrat Indonesia
+                                    <!-- <br>SMA Negeri 1 Sekincau
                                     <br>Jl. Z.A. Pagar Alam 9-11 Labuhan Ratu
                                     <br>Kedaton Bandar Lampung
-                                    <br>Telp: 0721-702022</p>
+                                    <br>Telp: 0721-702022 --></p>
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                 <ul class="social-icons">
                 </ul>
                 <div class="cp">
-                    Copyright © Universitas Teknokrat Indonesia
+                    Copyright © SMA Negeri 1 Sekincau
                 </div>
                 <a id="pagetop" title="Scroll to Top" href="http://spmb.teknokrat.ac.id/index.php/buat-akun-pendaftaran#" rel="nofollow">Go to Top</a>
             </div>

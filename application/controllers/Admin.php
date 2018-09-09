@@ -97,4 +97,13 @@ class Admin extends CI_Controller {
 			exit();
 		}
 	}
+
+	public function pendaftar_di_periode($idperiode){
+		$data = array(
+			'page' => 'pendaftar_di_periode',
+			'link' => 'periode',
+			'script' => 'script/script_dashboard',
+		);
+		$this->load->view('template/wrapper', $data);
+	}
 }
