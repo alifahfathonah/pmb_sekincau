@@ -131,9 +131,98 @@ class profil extends CI_Controller {
 		$data = array(
 			'page' => 'pendaftaran_sekolah',
 			'link' => 'pendaftaran',
-			// 'script' => 'script/script_profil'
+			'script' => 'script/script_profil',
 			'data' => $get 
 		);
 		$this->load->view('template/wrapper', $data);
+	}
+
+	public function proses_daftar($idperiode){
+		$cek = $this->db->get_where('pendaftaran', array('email' => $this->session->userdata('username')));
+		if($cek->num_rows() != 0){
+			echo '<script>alert("Anda sudah mendaftar pada periode ini");window.location = "'.base_url().'profil";</script>';
+			exit();
+		}
+		$data = array(
+			'idperiode' => $idperiode,
+			'tgldaftar' => date('Y-m-d'),
+			'email' => $this->session->userdata('username'),
+			'statusdaftar' => 0,
+			'statusbayar' => 0
+		);
+		$simpan = $this->db->insert('pendaftaran', $data);
+		if($simpan){
+			echo '<script>alert("Anda berhasil mendaftar pada periode ini");window.location = "'.base_url().'profil/pendaftaran";</script>';
+			exit();
+		}else{
+			echo '<script>alert("Gagal disimpan");window.location = "'.base_url().'profil";</script>';
+			exit();
+		}
+	}
+
+	public function pendaftaran_anda(){
+		$email = $this->session->userdata('username');
+		$get = $this->db->query("select * from pendaftaran left join periode on periode.idperiode = pendaftaran.idperiode where pendaftaran.email = '$email'");
+		$data = array(
+			'page' => 'pendaftaran_anda',
+			'link' => 'pendaftaran_anda',
+			'script' => 'script/script_profil',
+			'data' => $get
+		);
+		$this->load->view('template/wrapper', $data);
+	}
+
+	public function upload_bukti_bayar($id){
+		$get = $this->db->get_where('pembayaran', array('nodaftar' => $id));
+		$data = array(
+			'page' => 'upload_bukti_bayar',
+			'link' => 'pendaftaran_anda',
+			'script' => 'script/script_profil',
+			'idpendaftar' => $id,
+			'data' => $get
+		);
+		$this->load->view('template/wrapper', $data);
+	}
+
+	public function proses_upload_bukti_bayar(){
+		$this->load->library('image_lib');
+		$this->load->library('upload');
+
+		if(!empty($_FILES['bukti_bayar']['name'])){
+			$config['upload_path']          = './upload/';
+            $config['allowed_types']        = 'gif|jpg|png|pdf|PDF';
+            $config['max_size']             = '2048';
+            $config['file_name'] = 'bukti_bayar_'.$this->input->post('idpendaftar', true).'_'.date('YmdHis');
+            $this->upload->initialize($config);
+            if($this->upload->do_upload('bukti_bayar')){
+            	$upload_data = $this->upload->data();
+            	$bukti_bayar = $upload_data['file_name'];
+            }
+		}
+		$idpendaftar = $this->input->post('idpendaftar', true);
+		$data = array(
+			'nodaftar' => $this->input->post('idpendaftar', true),
+			'tglbayar' => date('Y-m-d'),
+			'jumlah' => $this->input->post('jumlah_bayar', true),
+			'nama_file' => $bukti_bayar,
+			'keterangan' => $this->input->post('keterangan', true),
+			'status' => 'menunggu verifikasi'
+		);
+		if($this->input->post('aksi', true) == 'tambah'){
+			$simpan = $this->db->insert('pembayaran', $data);
+		}else{
+			$get_idbayar = $this->db->get_where('pembayaran', array('nodaftar' => $this->input->post('idpendaftar', true)));
+			$this->db->where(array('nobayar' => $get_idbayar->row()->nobayar));
+			$simpan = $this->db->update('pembayaran', $data);
+		}
+		
+		if($simpan){
+			echo '<script>alert("Berhasil upload bukti bayar");window.location = "'.base_url().'profil/upload_bukti_bayar/'.$idpendaftar.'";</script>';
+			exit();
+		}else{
+			echo '<script>alert("Gagal");window.location = "'.base_url().'profil";</script>';
+			exit();
+		}
+
 	}
 }

@@ -26,6 +26,9 @@
                                                 <li class="item-213 current <?php if(!isset($link) || $link == 'pendaftaran'){ echo 'active'; }?>">
                                                     <a href="<?=base_url()?>profil/pendaftaran"><img src="<?=base_url()?>assets/register.png" alt="Buat Akun Pendaftaran"><span class="image-title">Pendaftaran </span></a>
                                                 </li>
+                                                <li class="item-213 current <?php if(!isset($link) || $link == 'pendaftaran_anda'){ echo 'active'; }?>">
+                                                    <a href="<?=base_url()?>profil/pendaftaran_anda"><img src="<?=base_url()?>assets/pampleticon.png" alt="Buat Akun Pendaftaran"><span class="image-title">Data Pendaftaran Anda </span></a>
+                                                </li>
                                                 <?php }?>
                                                 <!-- <li class="item-216">
                                                     <a href="<?=base_url()?>informasi-biaya-kuliah"><img src="<?=base_url()?>assets/biayaicon.png" alt="Informasi Biaya Kuliah"><span class="image-title">Informasi Biaya Kuliah</span></a>

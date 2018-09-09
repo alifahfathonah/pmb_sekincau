@@ -39,9 +39,21 @@ body{font-size:13px;} h1{font-size:30px;} h2{font-size:20px;} h3{font-size:18px;
 	<script src="<?=base_url()?>assets/bootstrap.min.js" type="text/javascript"></script>
 	<script src="<?=base_url()?>assets/menu.js" type="text/javascript"></script>
 	<script src="<?=base_url()?>assets/gotop.js" type="text/javascript"></script>
-	<script type="text/javascript">
+	<script src="<?=base_url()?>assets/data-tables/jquery.dataTables.js" type="text/javascript"></script>
+	<script src="<?=base_url()?>assets/data-tables/DT_bootstrap.js" type="text/javascript"></script>
+	<link href="<?=base_url()?>assets/data-tables/DT_bootstrap.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript">
 
 jQuery(document).ready(function(){
+	jQuery('#table_pendaftar').DataTable();
+	// jQuery(document).on('click', '.btn_daftar', function(e){
+	// 	var konfirmasi = confirm('Apakah anda yakin akan mendaftar pada periode ini?');
+	// 	if(konfirmasi){
+	// 		return true;
+	// 	}else{
+	// 		return false;
+	// 	}
+	// });
 var botheight = jQuery("#bottomspot").outerHeight(true);
 jQuery("#wrapper").css("margin-bottom", botheight);
 });
