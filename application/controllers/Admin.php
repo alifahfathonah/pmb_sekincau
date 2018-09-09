@@ -108,4 +108,15 @@ class Admin extends CI_Controller {
 		);
 		$this->load->view('template/wrapper', $data);
 	}
+
+	public function detail_pendaftar($idpendaftar){
+		$get = $this->db->query("select * from pendaftaran left join siswa on siswa.email = pendaftaran.email where nodaftar = '$idpendaftar'");
+		$data = array(
+			'page' => 'admin_detail_pendaftar',
+			'link' => 'periode',
+			'script' => 'script/script_dashboard',
+			'data' => $get
+		);
+		$this->load->view('template/wrapper', $data);
+	}
 }
