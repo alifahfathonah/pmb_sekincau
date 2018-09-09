@@ -83,8 +83,13 @@ class Dashboard extends CI_Controller {
 			)
 		);
 		if($cek->num_rows() > 0){
-			echo '<script>alert("User ditemukan, sedang menghubungkan");window.location = "'.base_url().'profil";</script>';
-			exit();
+			if($cek->row()->level == 'admin'){
+				echo '<script>alert("User ditemukan, sedang menghubungkan");window.location = "'.base_url().'admin";</script>';
+				exit();
+			}else if($cek->row()->level == 'siswa'){
+				echo '<script>alert("User ditemukan, sedang menghubungkan");window.location = "'.base_url().'profil";</script>';
+				exit();
+			}			
 		}else{
 			echo '<script>alert("Username atau password salah");window.location = "'.base_url().'";</script>';
 			exit();

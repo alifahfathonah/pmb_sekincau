@@ -46,6 +46,7 @@ body{font-size:13px;} h1{font-size:30px;} h2{font-size:20px;} h3{font-size:18px;
 
 jQuery(document).ready(function(){
 	jQuery('#table_pendaftar').DataTable();
+	jQuery('#table_periode').DataTable();
 	// jQuery(document).on('click', '.btn_daftar', function(e){
 	// 	var konfirmasi = confirm('Apakah anda yakin akan mendaftar pada periode ini?');
 	// 	if(konfirmasi){
