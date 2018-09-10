@@ -1,4 +1,4 @@
-<div class="hold-transition login-page" style="background-color: #a50d0d;">
+<div class="hold-transition">
     <div class="login-box">
         <div class="login-box-body">
             <a href="<?=base_url()?>Home"><img src="<?=base_url()?>assets/header_sekincau.png" alt="Chania" style="width: 100%;"></a>
