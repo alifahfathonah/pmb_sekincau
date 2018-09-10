@@ -6,7 +6,7 @@
                 <div id="mx-top-header" class="clearfix">
                     <div class="clearfix"></div>
                     <span class="mx_date">
-	Saturday, 08 September 2018</span></div>
+	<?php echo date('l, d F Y')?></span></div>
             </div>
         </div>
 
