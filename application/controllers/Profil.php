@@ -127,7 +127,8 @@ class profil extends CI_Controller {
 	}
 
 	public function pendaftaran(){
-		$get = $this->db->get_where('periode', array('status' => '1'));
+		$get = $this->db->query("select * from periode where status = '1' order by idperiode DESC limit 1");
+		// $get = $this->db->get_where('periode', array('status' => '1'));
 		$data = array(
 			'page' => 'pendaftaran_sekolah',
 			'link' => 'pendaftaran',

@@ -1,5 +1,5 @@
 <h4>Periode Pendaftaran</h4><hr/>
-<table class="table table-striped table-bordered" id="table_pendaftar">
+<table class="table table-striped table-bordered">
 	<thead>
 		<tr>
 			<th>No</th>
