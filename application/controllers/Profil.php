@@ -226,4 +226,21 @@ class profil extends CI_Controller {
 		}
 
 	}
+
+	public function cetak_form_pendaftaran($nodaftar){
+		$cek_bukti_bayar = $this->db->query("select * from pembayaran where nodaftar = $nodaftar");
+		if($cek_bukti_bayar->num_rows() == 0){
+			echo 'anda belum mengupload bukti bayar';
+			exit();
+		}else{
+			if($cek_bukti_bayar->row()->status == 'Ditolak'){
+				echo 'Bukti bayar ditolak';
+				exit();
+			}else{
+				$query = $this->db->query("select * from pendaftaran left join siswa on siswa.email = pendaftaran.email where pendaftaran.nodaftar = '$nodaftar'");
+
+				$this->load->view('form_pendaftaran', array('query' => $query));
+			}
+		}
+	}
 }

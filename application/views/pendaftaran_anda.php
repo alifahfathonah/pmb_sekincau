@@ -29,7 +29,8 @@
 				?>
 			</th>
 			<td>
-				<a href="<?=base_url()?>profil/upload_bukti_bayar/<?=$row->nodaftar?>" class="btn btn-success">Upload Bukti Bayar</a>			
+				<a href="<?=base_url()?>profil/upload_bukti_bayar/<?=$row->nodaftar?>" class="btn btn-success btn-sm">Upload Bukti Bayar</a>		
+				<a href="<?=base_url()?>profil/cetak_form_pendaftaran/<?=$row->nodaftar?>" class="btn btn-danger btn-sm">Cetak Form Pendaftaran</a>	
 			</td>
 		</tr>
 		<?php }?>
