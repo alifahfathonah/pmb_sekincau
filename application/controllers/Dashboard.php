@@ -83,14 +83,17 @@ class Dashboard extends CI_Controller {
 		$password = md5(trim($this->input->post('password', true)));
 
 		$cek = $this->db->get_where('user', array('username' => $email, 'password' => $password));
-
+		
 		$this->session->set_userdata(
 			array(
 				'is_login' => true,
 				'username' => $email,
-				'level' => $cek->row()->level
+				'level' => $cek->row()->level,
 			)
 		);
+		var_dump('email : '.$email.' password:'.$password.' Hasil :'.$cek->num_rows());
+
+		exit();
 		if($cek->num_rows() > 0){
 			if($cek->row()->level == 'admin'){
 				echo '<script>alert("User ditemukan, sedang menghubungkan");window.location = "'.base_url().'admin";</script>';
