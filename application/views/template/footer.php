@@ -8,10 +8,10 @@
 
                             <div class="custom">
                                 <p style="text-align: center;"><strong><span style="font-size: 12pt;">Sekretariat Pendaftaran</span></strong>
-                                    <!-- <br>SMA Negeri 1 Sekincau
-                                    <br>Jl. Z.A. Pagar Alam 9-11 Labuhan Ratu
-                                    <br>Kedaton Bandar Lampung
-                                    <br>Telp: 0721-702022 --></p>
+                                    <br>SMA Negeri 1 Sekincau
+                                    <br>JL. PASAR BARU GIHAM
+                                    <br>Sekincau Lampung Barat
+                                    <br>Telp: -</p>
                             </div>
                         </div>
                     </div>
