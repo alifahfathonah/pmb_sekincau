@@ -21,11 +21,20 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		$data = array(
+			'page' => 'dashboardalur',
+			'link' => 'dashboardalur',
+			'script' => 'script/script_dashboard' 
+		);
+		$this->load->view('template/wrapper', $data);
+	}
+
+	public function pendaftaran(){
+		$data = array(
 			'page' => 'dashboard',
 			'link' => 'dashboard',
 			'script' => 'script/script_dashboard' 
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template/wrapper', $data);	
 	}
 
 	public function daftar(){

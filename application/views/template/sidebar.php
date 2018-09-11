@@ -14,7 +14,7 @@
                                             <ul class="nav menu">
                                                 <?php if(!$this->session->userdata('is_login')){?>
                                                 <li class="item-213 current <?php if(!isset($link) || $link == 'dashboard'){ echo 'active'; }?>">
-                                                    <a href="<?=base_url()?>"><img src="<?=base_url()?>assets/register.png" alt="Buat Akun Pendaftaran"><span class="image-title">Pendaftaran</span></a>
+                                                    <a href="<?=base_url()?>dashboard/pendaftaran"><img src="<?=base_url()?>assets/register.png" alt="Buat Akun Pendaftaran"><span class="image-title">Pendaftaran</span></a>
                                                 </li>
                                                 <li class="item-214 <?php if($link == 'dashboard_login'){ echo 'active'; }?>">
                                                     <a href="<?=base_url()?>dashboard/dasboard_login"><img src="<?=base_url()?>assets/login.png" alt="Daftar/Login"><span class="image-title">Login</span></a>
