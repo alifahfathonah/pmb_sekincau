@@ -44,6 +44,7 @@
 			<td>
 				<a href="<?=base_url()?>admin/detail_pendaftar/<?=$value->nodaftar?>" class="btn btn-warning btn-sm">Detail</a>
 				<a href="<?=base_url()?>admin/bukti_bayar_pendaftar/<?=$value->nodaftar?>" class="btn btn-success btn-sm">Bukti Bayar</a>
+				<a href="<?=base_url()?>admin/cetak_kartu_ujian/<?=$value->nodaftar?>" class="btn btn-danger btn-sm">Cetak Kartu Ujian</a>
 			</td>
 		</tr>
 		<?php }?>

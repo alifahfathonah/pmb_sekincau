@@ -152,20 +152,78 @@ class Admin extends CI_Controller {
 	}
 
 	public function proses_verifikasi_bukti_bayar(){
+		$this->load->library('image_lib');
+		$this->load->library('upload');
+
+		if(!empty($_FILES['bukti_bayar']['name'])){
+			$config['upload_path']          = './upload/';
+            $config['allowed_types']        = 'gif|jpg|png|pdf|PDF';
+            $config['max_size']             = '2048';
+            $config['file_name'] = 'bukti_bayar_'.$this->input->post('idpendaftar', true).'_'.date('YmdHis');
+            $this->upload->initialize($config);
+            if($this->upload->do_upload('bukti_bayar')){
+            	$upload_data = $this->upload->data();
+            	$bukti_bayar = $upload_data['file_name'];
+            }
+		}
+		$idpendaftar = $this->input->post('idpendaftar', true);
 		$data = array(
+			'nodaftar' => $this->input->post('idpendaftar', true),
+			'tglbayar' => date('Y-m-d'),
+			'jumlah' => $this->input->post('jumlah_bayar', true),
+			'nama_file' => $bukti_bayar,
+			'keterangan' => $this->input->post('keterangan', true),
 			'status' => $this->input->post('verifikasi_bukti_bayar', true),
 			'pemverifikasi' => $this->session->userdata('username'),
 			'tglverifikasi' => date('Y-m-d H:i:s') 
 		);
-		$idpendaftar = $this->input->post('idpendaftar', true);
-		$this->db->where(array('nodaftar' => $idpendaftar));
-		$simpan = $this->db->update('pembayaran', $data);
+		if($this->input->post('aksi', true) == 'tambah'){
+			$simpan = $this->db->insert('pembayaran', $data);
+		}else{
+			$get_idbayar = $this->db->get_where('pembayaran', array('nodaftar' => $this->input->post('idpendaftar', true)));
+			$this->db->where(array('nobayar' => $get_idbayar->row()->nobayar));
+			$simpan = $this->db->update('pembayaran', $data);
+		}
+		
 		if($simpan){
-			echo '<script>alert("Berhasil disimpan");window.location = "'.base_url().'admin/bukti_bayar_pendaftar/'.$idpendaftar.'";</script>';
+			echo '<script>alert("Berhasil upload bukti bayar");window.location = "'.base_url().'admin/bukti_bayar_pendaftar/'.$idpendaftar.'";</script>';
 			exit();
 		}else{
-			echo '<script>alert("Gagal disimpan");window.location = "'.base_url().'admin/bukti_bayar_pendaftar/'.$idpendaftar.'";</script>';
+			echo '<script>alert("Gagal");window.location = "'.base_url().'admin/bukti_bayar_pendaftar/'.$idpendaftar.'";</script>';
 			exit();
+		}
+
+		// $data = array(
+		// 	'status' => $this->input->post('verifikasi_bukti_bayar', true),
+		// 	'pemverifikasi' => $this->session->userdata('username'),
+		// 	'tglverifikasi' => date('Y-m-d H:i:s') 
+		// );
+		// $idpendaftar = $this->input->post('idpendaftar', true);
+		// $this->db->where(array('nodaftar' => $idpendaftar));
+		// $simpan = $this->db->update('pembayaran', $data);
+		// if($simpan){
+		// 	echo '<script>alert("Berhasil disimpan");window.location = "'.base_url().'admin/bukti_bayar_pendaftar/'.$idpendaftar.'";</script>';
+		// 	exit();
+		// }else{
+		// 	echo '<script>alert("Gagal disimpan");window.location = "'.base_url().'admin/bukti_bayar_pendaftar/'.$idpendaftar.'";</script>';
+		// 	exit();
+		// }
+	}
+
+	public function cetak_kartu_ujian($nodaftar){
+		$cek_bukti_bayar = $this->db->query("select * from pembayaran where nodaftar = $nodaftar");
+		if($cek_bukti_bayar->num_rows() == 0){
+			echo 'anda belum mengupload bukti bayar';
+			exit();
+		}else{
+			if($cek_bukti_bayar->row()->status == 'Ditolak'){
+				echo 'Bukti bayar ditolak';
+				exit();
+			}else{
+				$query = $this->db->query("select * from pendaftaran left join siswa on siswa.email = pendaftaran.email where pendaftaran.nodaftar = '$nodaftar'");
+
+				$this->load->view('kartu_ujian', array('query' => $query));
+			}
 		}
 	}
 }
