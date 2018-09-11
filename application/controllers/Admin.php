@@ -213,7 +213,7 @@ class Admin extends CI_Controller {
 	public function cetak_kartu_ujian($nodaftar){
 		$cek_bukti_bayar = $this->db->query("select * from pembayaran where nodaftar = $nodaftar");
 		if($cek_bukti_bayar->num_rows() == 0){
-			echo 'anda belum mengupload bukti bayar';
+			echo 'Bukti bayar belum diupload';
 			exit();
 		}else{
 			if($cek_bukti_bayar->row()->status == 'Ditolak'){
