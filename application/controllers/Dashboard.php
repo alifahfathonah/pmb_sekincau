@@ -84,7 +84,7 @@ class Dashboard extends CI_Controller {
 
 		$cek = $this->db->get_where('user', array('username' => $email, 'password' => $password));
 		
-		
+	
 		
 		if($cek->num_rows() > 0){
 			$this->session->set_userdata(

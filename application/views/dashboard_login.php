@@ -39,7 +39,7 @@
         <footer class="container-fluid text-center" style="background:#222;">
             <strong style="color: #fff;"> © 2017 - 2018</strong>
             <br><span style="color: #fff;">All rights reserved.</span>
-            <br> <span style="color: #fff;">Powered by <a data-toggle="modal" data-target="#puskom" style="color: #F00;">Pustik UTI<br></a></span>
+            
         </footer>
     </div>
     <!-- /.login-box -->
