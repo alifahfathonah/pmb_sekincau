@@ -25,7 +25,7 @@ class Admin extends CI_Controller {
 			'link' => 'admin',
 			'script' => 'script/script_dashboard' 
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function periode(){
@@ -36,7 +36,7 @@ class Admin extends CI_Controller {
 			'script' => 'script/script_dashboard',
 			'data' => $get 
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function detail_periode($idperiode){
@@ -48,7 +48,7 @@ class Admin extends CI_Controller {
 			'data' => $get, 
 			'idperiode' => $idperiode
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function proses_update_periode(){
@@ -77,7 +77,7 @@ class Admin extends CI_Controller {
 			'link' => 'periode',
 			'script' => 'script/script_dashboard',
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function proses_tambah_periode(){
@@ -106,7 +106,7 @@ class Admin extends CI_Controller {
 			'script' => 'script/script_dashboard',
 			'data' => $get
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function detail_pendaftar($idpendaftar){
@@ -118,7 +118,7 @@ class Admin extends CI_Controller {
 			'data' => $get,
 			'idpendaftar' => $idpendaftar
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function bukti_bayar_pendaftar($idpendaftar){
@@ -130,7 +130,7 @@ class Admin extends CI_Controller {
 			'idpendaftar' => $idpendaftar,
 			'data' => $get
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function proses_verifikasi_pendaftar(){

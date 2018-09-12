@@ -25,7 +25,7 @@ class Dashboard extends CI_Controller {
 			'link' => 'dashboardalur',
 			'script' => 'script/script_dashboard' 
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function pendaftaran(){
@@ -34,7 +34,7 @@ class Dashboard extends CI_Controller {
 			'link' => 'dashboard',
 			'script' => 'script/script_dashboard' 
 		);
-		$this->load->view('template/wrapper', $data);	
+		$this->load->view('template_blue/wrapper', $data);	
 	}
 
 	public function daftar(){
@@ -75,7 +75,7 @@ class Dashboard extends CI_Controller {
 			'link' => 'dashboard_login',
 			'script' => 'script/script_dashboard' 
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function login(){

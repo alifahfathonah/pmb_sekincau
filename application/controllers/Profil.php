@@ -27,7 +27,7 @@ class profil extends CI_Controller {
 			// 'script' => 'script/script_profil'
 			'data' => $get 
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function update_siswa(){
@@ -135,7 +135,7 @@ class profil extends CI_Controller {
 			'script' => 'script/script_profil',
 			'data' => $get 
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function proses_daftar($idperiode){
@@ -170,7 +170,7 @@ class profil extends CI_Controller {
 			'script' => 'script/script_profil',
 			'data' => $get
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function upload_bukti_bayar($id){
@@ -182,7 +182,7 @@ class profil extends CI_Controller {
 			'idpendaftar' => $id,
 			'data' => $get
 		);
-		$this->load->view('template/wrapper', $data);
+		$this->load->view('template_blue/wrapper', $data);
 	}
 
 	public function proses_upload_bukti_bayar(){
