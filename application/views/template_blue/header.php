@@ -10,7 +10,7 @@
     <title>Dashboard - Deep Blue Admin</title>
 
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets_blue/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets_blue/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets_blue/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets_blue/local.css">
 
     <script type="text/javascript" src="<?=base_url()?>assets_blue/jquery-1.10.2.min.js"></script>
